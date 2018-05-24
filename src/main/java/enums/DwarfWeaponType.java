@@ -12,6 +12,6 @@ public enum DwarfWeaponType {
     }
 
     public int getAttackBonus() {
-        return attackBonus;
+        return this.attackBonus;
     }
 }

@@ -1,4 +1,5 @@
 import enums.DwarfWeaponType;
+import enums.PlayerArmourType;
 import org.junit.Before;
 import org.junit.Test;
 import players.Dwarf;
@@ -11,7 +12,7 @@ public class DwarfTest {
 
     @Before
     public void before() {
-        dwarf = new Dwarf("Gimli", 6,8, DwarfWeaponType.AXE);
+        dwarf = new Dwarf("Gimli", 6,8, PlayerArmourType.CHAINMAIL, DwarfWeaponType.AXE);
     }
 
     @Test
@@ -20,8 +21,8 @@ public class DwarfTest {
     }
 
     @Test
-    public void canGetHealth() {
-        assertEquals(6, dwarf.getHealth());
+    public void canGetBaseHealth() {
+        assertEquals(6, dwarf.getBaseHealth());
     }
 
     @Test
@@ -32,6 +33,11 @@ public class DwarfTest {
     @Test
     public void canGetTotalAttack() {
         assertEquals(15, dwarf.getTotalAttack());
+    }
+
+    @Test
+    public void canGetTotalHealth() {
+        assertEquals(11, dwarf.getTotalHealth());
     }
 
 }

@@ -1,15 +1,19 @@
 package players;
 
+import enums.PlayerArmourType;
+
 public abstract class Player {
 
     private String name;
-    private int health;
+    private int baseHealth;
     private int baseAttack;
+    private PlayerArmourType playerArmourType;
 
-    public Player(String name, int health, int baseAttack){
+    public Player(String name, int baseHealth, int baseAttack, PlayerArmourType playerArmourType){
         this.name = name;
-        this.health = health;
+        this.baseHealth = baseHealth;
         this.baseAttack = baseAttack;
+        this.playerArmourType = playerArmourType;
     }
 
 
@@ -17,11 +21,15 @@ public abstract class Player {
         return this.name;
     }
 
-    public int getHealth() {
-        return this.health;
+    public int getBaseHealth() {
+        return this.baseHealth;
     }
 
     public int getBaseAttack() {
         return this.baseAttack;
+    }
+
+    public int getTotalHealth() {
+        return this.getBaseHealth() + playerArmourType.getHealthBonus();
     }
 }
