@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 public class Party {
 
-    private ArrayList<Player> members;
+    private ArrayList <Player> members;
 
-    public Party(){
+
+    public Party() {
         this.members = new ArrayList <>();
     }
 
@@ -23,4 +24,6 @@ public class Party {
     public void removePlayer(Player player) {
         this.members.remove(player);
     }
+
+
 }

@@ -21,8 +21,8 @@ public class DwarfTest {
     }
 
     @Test
-    public void canGetBaseHealth() {
-        assertEquals(6, dwarf.getBaseHealth());
+    public void canGethealth() {
+        assertEquals(6, dwarf.gethealth());
     }
 
     @Test
@@ -35,9 +35,5 @@ public class DwarfTest {
         assertEquals(15, dwarf.getTotalAttack());
     }
 
-    @Test
-    public void canGetTotalHealth() {
-        assertEquals(11, dwarf.getTotalHealth());
-    }
 
 }

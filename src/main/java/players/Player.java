@@ -5,13 +5,13 @@ import enums.PlayerArmourType;
 public abstract class Player {
 
     private String name;
-    private int baseHealth;
+    private int health;
     private int baseAttack;
     private PlayerArmourType playerArmourType;
 
-    public Player(String name, int baseHealth, int baseAttack, PlayerArmourType playerArmourType){
+    public Player(String name, int health, int baseAttack, PlayerArmourType playerArmourType){
         this.name = name;
-        this.baseHealth = baseHealth;
+        this.health = health;
         this.baseAttack = baseAttack;
         this.playerArmourType = playerArmourType;
     }
@@ -21,15 +21,17 @@ public abstract class Player {
         return this.name;
     }
 
-    public int getBaseHealth() {
-        return this.baseHealth;
+    public int gethealth() {
+        return this.health;
     }
 
     public int getBaseAttack() {
         return this.baseAttack;
     }
 
-    public int getTotalHealth() {
-        return this.getBaseHealth() + playerArmourType.getHealthBonus();
+
+    public void loseHealth(int amount) {
+        this.health =- amount;
     }
+
 }
