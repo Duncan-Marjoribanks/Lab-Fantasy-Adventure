@@ -1,5 +1,7 @@
 package players;
 
+import behaviours.Ifight;
+import enemies.Enemy;
 import enums.PlayerArmourType;
 
 public abstract class Player {
@@ -21,7 +23,7 @@ public abstract class Player {
         return this.name;
     }
 
-    public int gethealth() {
+    public int getHealth() {
         return this.health;
     }
 
@@ -29,9 +31,14 @@ public abstract class Player {
         return this.baseAttack;
     }
 
+    public int getArmour() {
+        return this.playerArmourType.getHealthBonus();
+    }
+
 
     public void loseHealth(int amount) {
-        this.health =- amount;
+        this.health -= (amount - this.getArmour());
     }
+
 
 }
